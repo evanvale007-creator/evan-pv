@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Evan Putra Valeryan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000000;
+        }
+        /* Kustom Gradasi Latar Belakang */
+        .bg-main {
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.08) 0%, transparent 40%),
+                linear-gradient(180deg, #000000 0%, #050505 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(239, 68, 68, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 40%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .profile-frame {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #ef4444, #7f1d1d, #000000);
+            box-shadow: 0 0 50px rgba(239, 68, 68, 0.3);
+        }
+        .profile-img-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #0a0a0a;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #000;
+        }
+        .profile-img-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Memastikan foto terlihat tajam */
+            object-position: center;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Timeline Enhancements */
+        .edu-badge {
+            background: linear-gradient(90deg, #ef4444 0%, #991b1b 100%);
+        }
+    </style>
+</head>
+<body class="bg-main text-white min-h-screen selection:bg-red-500/30">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-black/60 backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold tracking-tighter gradient-text">EPV.</h1>
+            <div class="hidden md:flex space-x-10 text-[11px] font-bold tracking-[0.2em] uppercase">
+                <a href="#home" class="hover:text-red-500 transition-colors">Beranda</a>
+                <a href="#about" class="hover:text-red-500 transition-colors">Profil</a>
+                <a href="#education" class="hover:text-red-500 transition-colors">Riwayat</a>
+                <a href="#hobby" class="hover:text-red-500 transition-colors">Minat</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-44 pb-32 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="profile-frame mb-10 animate-float">
+                <div class="profile-img-inner">
+                    <!-- Foto Utama dari File yang Diunggah -->
+                    <img src="evan.jpg.jpeg" 
+                         alt="Evan Putra Valeryan" 
+                         onerror="this.src='https://ui-avatars.com/api/?name=Evan+Putra&background=ef4444&color=fff&size=240'">
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/30 border border-red-500/20 text-red-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+                Halo Dunia!
+            </div>
+
+            <h2 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-none">
+                <span class="block">Saya Evan Putra</span>
+                <span class="gradient-text">Valeryan</span>
+            </h2>
+
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light mb-12">
+                Lahir di <span class="text-white font-medium">Malang</span>, besar di <span class="text-white font-medium">Magetan</span>. 
+                Seorang antusias digital yang mengeksplorasi titik temu antara teknologi, kreativitas, dan semangkuk mi yang sempurna.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#about" class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-2xl font-bold transition-all transform hover:scale-105 shadow-xl shadow-red-900/20">
+                    Kenali Saya
+                </a>
+                <a href="#hobby" class="glass-card px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all border border-white/10">
+                    Minat Saya
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-red-600/20 rounded-[2.5rem] blur-3xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="relative rounded-[2rem] overflow-hidden border border-white/10 aspect-video lg:aspect-square">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Gaya Hidup Digital" 
+                             class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="inline-block h-1 w-12 bg-red-600"></div>
+                    <h3 class="text-4xl font-bold tracking-tight">Latar Belakang Pribadi</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed font-light">
+                        Meskipun saya lahir di Malang pada 17 November 2007, Magetan telah menjadi rumah tempat saya tumbuh dan bermimpi. Di kaki Gunung Lawu, saya menghabiskan waktu mengeksplorasi dunia digital dan seni visual.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="p-8 rounded-3xl glass-card">
+                            <i data-lucide="utensils" class="text-red-500 mb-5 w-7 h-7"></i>
+                            <h4 class="font-bold text-white text-lg mb-2">Makanan Favorit</h4>
+                            <p class="text-slate-500 leading-snug">Mie Ayam, Ramen, & olahan mie lainnya.</p>
+                        </div>
+                        <div class="p-8 rounded-3xl glass-card">
+                            <i data-lucide="map-pin" class="text-white mb-5 w-7 h-7"></i>
+                            <h4 class="font-bold text-white text-lg mb-2">Lokasi</h4>
+                            <p class="text-slate-500 leading-snug">Magetan, Jawa Timur, Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32 px-6 bg-black relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/5 blur-[120px] rounded-full"></div>
+        
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-24">
+                <span class="text-red-500 text-[11px] font-black tracking-[0.4em] uppercase mb-4 block">Milestone Akademik</span>
+                <h3 class="text-5xl font-black tracking-tighter gradient-text">JEJAK PENDIDIKAN</h3>
+            </div>
+
+            <div class="grid gap-8">
+                <!-- SMAN 1 Magetan -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center border-l-4 border-l-red-600 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i data-lucide="graduation-cap" class="w-32 h-32 text-white"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-3xl edu-badge flex items-center justify-center shrink-0 shadow-2xl shadow-red-900/40">
+                        <i data-lucide="school" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3 justify-center md:justify-start">
+                            <h4 class="text-3xl font-bold">SMAN 1 Magetan</h4>
+                            <span class="px-4 py-1 rounded-full bg-red-600/20 text-red-400 text-[10px] font-black tracking-widest uppercase border border-red-500/20 w-fit mx-auto md:mx-0">2023 - Sekarang</span>
+                        </div>
+                        <p class="text-slate-400 text-lg font-light leading-relaxed">
+                            Sedang menempuh pendidikan menengah atas, aktif mengeksplorasi minat dalam bidang teknologi dan organisasi sekolah.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SMPN 3 Magetan -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center border-l-4 border-l-white/20 relative overflow-hidden group">
+                    <div class="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-white/10 transition-colors">
+                        <i data-lucide="book-open" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3 justify-center md:justify-start">
+                            <h4 class="text-3xl font-bold text-slate-200">SMPN 3 Magetan</h4>
+                            <span class="px-4 py-1 rounded-full bg-white/5 text-slate-400 text-[10px] font-black tracking-widest uppercase border border-white/10 w-fit mx-auto md:mx-0">2020 - 2023</span>
+                        </div>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            Masa di mana dasar-dasar kreativitas digital mulai terbentuk.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SDN Selosari 1 -->
+                <div class="glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-center border-l-4 border-l-white/10 relative overflow-hidden group">
+                    <div class="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 group-hover:bg-white/10 transition-colors">
+                        <i data-lucide="pencil" class="w-10 h-10 text-slate-400"></i>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3 justify-center md:justify-start">
+                            <h4 class="text-3xl font-bold text-slate-400">SDN Selosari 1</h4>
+                            <span class="px-4 py-1 rounded-full bg-white/5 text-slate-500 text-[10px] font-black tracking-widest uppercase border border-white/5 w-fit mx-auto md:mx-0">2014 - 2020</span>
+                        </div>
+                        <p class="text-slate-600 text-lg font-light leading-relaxed">
+                            Langkah pertama dalam dunia pendidikan formal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobby" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h3 class="text-4xl font-black mb-4 tracking-tighter">MINAT & HOBI</h3>
+                <div class="w-20 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-12 rounded-[3rem] bg-gradient-to-br from-red-950/20 to-transparent border border-white/5 group hover:border-red-500/30 transition-all duration-700">
+                    <div class="flex items-center gap-6 mb-10">
+                        <div class="bg-red-600 p-5 rounded-3xl shadow-xl shadow-red-900/30">
+                            <i data-lucide="gamepad-2" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-3xl font-black italic tracking-tighter uppercase">GAMING</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black tracking-widest text-red-400 uppercase">MLBB</span>
+                        <span class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black tracking-widest text-red-400 uppercase">PUBG Mobile</span>
+                        <span class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black tracking-widest text-red-400 uppercase">WuWa</span>
+                    </div>
+                </div>
+                <div class="p-12 rounded-[3rem] glass-card border border-white/5 group hover:bg-white/[0.04] transition-all duration-700">
+                    <div class="flex items-center gap-6 mb-10">
+                        <div class="bg-white p-5 rounded-3xl shadow-xl shadow-white/10">
+                            <i data-lucide="layers" class="w-8 h-8 text-black"></i>
+                        </div>
+                        <h4 class="text-3xl font-black tracking-tighter uppercase">MEMBACA</h4>
+                    </div>
+                    <p class="text-slate-500 text-lg leading-relaxed font-light">
+                        Mengagumi visual storytelling melalui komik dan manga.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-black relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl font-black gradient-text mb-8 uppercase tracking-[0.4em]">Evan Putra</h2>
+            <div class="flex justify-center gap-10 mb-12">
+                <a href="#" class="p-4 rounded-full bg-white/5 hover:bg-red-600 hover:text-white transition-all transform hover:scale-110 text-slate-400">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="p-4 rounded-full bg-white/5 hover:bg-red-600 hover:text-white transition-all transform hover:scale-110 text-slate-400">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="p-4 rounded-full bg-white/5 hover:bg-red-600 hover:text-white transition-all transform hover:scale-110 text-slate-400">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-slate-600 text-[11px] uppercase tracking-[0.3em] font-medium">
+                Didesain dengan presisi • &copy; 2026 Evan Putra Valeryan
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        menuBtn.addEventListener('click', () => {
+            const navLinks = document.querySelector('nav div div');
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-full');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-black');
+            navLinks.classList.toggle('p-6');
+            navLinks.classList.toggle('space-y-4');
+        });
+    </script>
+</body>
+</html>
